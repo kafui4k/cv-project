@@ -1,0 +1,27 @@
+*, html {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+}
+
+.content {
+}
+
+.pinfo___container {
+
+}
+
+form {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
