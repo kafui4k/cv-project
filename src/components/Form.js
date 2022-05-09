@@ -3,39 +3,6 @@ import Input from './Input';
 import TextArea from './TextArea';
 
 class Form extends Component {
-    constructor(props) {
-        super(props)
-      
-        this.state = {
-          firstname: '',
-          lastname: '',
-          email: '',
-          telephone: '',
-          schoolAttended: '',
-          studyTitle: '',
-          dateOfStudy: '',
-          companyName: '',
-          positionTitle: '',
-          jobDescription: '',
-          startDate: '',
-          endDate: ''
-        }
-    
-        this.handleFormChange = this.handleFormChange.bind(this)
-        this.onSubmitForm = this.onSubmitForm.bind(this)
-      }
-    
-      handleFormChange(event) {
-          // handle form input change here
-          this.setState({
-              [event.target.name]: event.target.value
-          })
-      }
-    
-      onSubmitForm(e) {
-        e.preventDefault();
-      }
-      
   render() {
     return (
         <section className='content'>
@@ -46,8 +13,8 @@ class Form extends Component {
                 type="text"
                 name="firstname"
                 placeholder='e.g: John'
-                value={this.state.firstname}
-                onChange={this.handleFormChange}
+                value={this.props.firstname}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='lastname'>Last name</label>
@@ -55,8 +22,8 @@ class Form extends Component {
                 type="text"
                 name="lastname"
                 placeholder='e.g:Doe'
-                value={this.state.lastname}
-                onChange={this.handleFormChange}
+                value={this.props.lastname}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='email'>Email address</label>
@@ -64,8 +31,8 @@ class Form extends Component {
                 type="email"
                 name="email"
                 placeholder='e.g: jd@admin.com'
-                value={this.state.email}
-                onChange={this.handleFormChange}
+                value={this.props.email}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='telephone'>Tel</label>
@@ -73,8 +40,8 @@ class Form extends Component {
                 type="tel"
                 name="telephone"
                 placeholder='e.g: 000 222 000 333'
-                value={this.state.telephone}
-                onChange={this.handleFormChange}
+                value={this.props.telephone}
+                onChange={this.props.handleFormChange}
             />
 
             <h1 className='pinfo___title'>Educational Experience</h1>
@@ -83,8 +50,8 @@ class Form extends Component {
                 type='text'
                 name='schoolAttended'
                 placeholder='e.g: School of Hardknocks'
-                value={this.state.schoolAttended}
-                onChange={this.handleFormChange}
+                value={this.props.eduExperience.schoolAttended}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='studyTitle'>Title of Study</label>
@@ -92,16 +59,16 @@ class Form extends Component {
                 type='text'
                 name='studyTitle'
                 placeholder='e.g: BSC Computer Science'
-                value={this.state.studyTitle}
-                onChange={this.handleFormChange}
+                value={this.props.eduExperience.studyTitle}
+                onChange={this.props.handleFormChange}
                 />
 
-            <label htmlFor='dateOfStudy'>Date of Study</label>
+             <label htmlFor='dateOfStudy'>Date of Study</label>
             <Input
                 type='date'
                 name='dateOfStudy'
-                value={this.state.dateOfStudy}
-                onChange={this.handleFormChange}
+                value={this.props.eduExperience.dateOfStudy}
+                onChange={this.props.handleFormChange}
             />
 
             <h1 className='pinfo___title'>Practical Experience</h1>
@@ -110,8 +77,8 @@ class Form extends Component {
                 type='text'
                 name='companyName'
                 placeholder='e.g: John Doe ent.'
-                value={this.state.companyName}
-                onChange={this.handleFormChange}
+                value={this.props.companyName}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='positionTitle'>Position Title</label>
@@ -119,31 +86,31 @@ class Form extends Component {
                 type='text'
                 name='positionTitle'
                 placeholder='e.g: Senior Engineer'
-                value={this.state.positionTitle}
-                onChange={this.handleFormChange}
+                value={this.props.positionTitle}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='jobDescription'>Job/Role Description</label>
             <TextArea
                 name='jobDescription'
                 placeholder='e.g: A lot of stuff'
-                value={this.state.jobDescription}
-                onChange={this.handleFormChange}></TextArea>
+                value={this.props.jobDescription}
+                onChange={this.props.handleFormChange}></TextArea>
 
             <label htmlFor='startDate'>Start Date</label>
             <Input
                 type='date'
                 name='startDate'
-                value={this.state.startDate}
-                onChange={this.handleFormChange}
+                value={this.props.startDate}
+                onChange={this.props.handleFormChange}
             />
 
             <label htmlFor='endDate'>End Date</label>
             <Input
                 type='date'
                 name='endDate'
-                value={this.state.endDate}
-                onChange={this.handleFormChange}
+                value={this.props.endDate}
+                onChange={this.props.handleFormChange}
             />
             
             <button className='btn-generate-resume' type='submit'>Submit</button>
