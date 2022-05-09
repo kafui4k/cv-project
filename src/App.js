@@ -1,21 +1,13 @@
 import { Component } from 'react';
-import Educational from './components/Educational';
-import Personal from './components/Personal';
-import Practical from './components/Practical';
+import Form from './components/Form';
+import PreviewForm from './components/PreviewForm';
 
 class App extends Component {
   render() {
     return (
       <main className="App">
-        <section className='content'>
-          <h1>Resume.ly</h1>
-          <Personal />
-          <Educational />
-          <Practical />
-        </section>
-        <section className='content___preview'>
-          <h1>Preview COntent here</h1>
-        </section>
+        <Form />
+        <PreviewForm />
       </main>
     );
   }
