@@ -18,3 +18,31 @@ form {
     flex-direction: column;
     padding: 10px;
 }
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-education {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -20px;
+    border-top: 1px solid;
+}
+
+.profile___edication___town___program {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+.profile-work {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+    border-top: 1px solid;
+}

@@ -50,7 +50,7 @@ class Form extends Component {
                 type='text'
                 name='schoolAttended'
                 placeholder='e.g: School of Hardknocks'
-                value={this.props.eduExperience.schoolAttended}
+                value={this.props.schoolAttended}
                 onChange={this.props.handleFormChange}
             />
 
@@ -59,7 +59,7 @@ class Form extends Component {
                 type='text'
                 name='studyTitle'
                 placeholder='e.g: BSC Computer Science'
-                value={this.props.eduExperience.studyTitle}
+                value={this.props.studyTitle}
                 onChange={this.props.handleFormChange}
                 />
 
@@ -67,7 +67,7 @@ class Form extends Component {
             <Input
                 type='date'
                 name='dateOfStudy'
-                value={this.props.eduExperience.dateOfStudy}
+                value={this.props.dateOfStudy}
                 onChange={this.props.handleFormChange}
             />
 
