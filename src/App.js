@@ -6,48 +6,61 @@ class App extends Component {
     super(props)
 
     this.state = {
-       firstname: "Jeff Dean",
-       lastname: 'Mscott',
+        firstname: "Jeff Dean",
+        lastname: 'Mscott',
         email: 'jeff.dean@yaol.com',
         telephone: '+233-20-34-33-234',
         educationalExperiences: [],
         educationalExperience: {
-          schoolAttended: 'MIT',
-          studyTitle: 'Computer Sceince Major - Robotics',
-          dateOfStudy: '2022',
+          schoolAttended: '',
+          studyTitle: '',
+          dateOfStudy: '',
         },
-        workExperiences: wkExperiences,
+        workExperiences: [],
         workExperience: {
-          companyName: 'builds and support',
-          positionTitle: 'Software Developer - Full Stack',
-          jobDescription: 'Build customer facing application solutions',
-          startDate: '2022',
-          endDate: 'present'
+          companyName: '',
+          positionTitle: '',
+          jobDescription: '',
+          startDate: '',
+          endDate: ''
         }
         
     }
 
     this.handleFormChange = this.handleFormChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
   handleFormChange(event) {
-    // handle form input change here
-    this.setState(prevState => {
-        return {
+    this.setState({
           [event.target.name]: event.target.value,
           educationalExperience: {
+            ...this.state.educationalExperience,
             [event.target.name]: event.target.value
           },
           workExperience: {
+            ...this.state.workExperience,
             [event.target.name]: event.target.value
-          },
-          // educationalExperiences: [...prevState.educationalExperiences, this.state.educationalExperience],
-        }
+          }
+      })
+    }
+    
+  handleFormSubmit(event) {
+    event.preventDefault();
+    // alert('form submitted');
+    console.log(this.state.educationalExperience)
+    this.setState(prevState => {
+      return {
+        educationalExperiences: [...prevState.educationalExperiences, this.state.educationalExperience],
+        workExperiences: [...prevState.workExperiences, this.state.workExperience],
+      }
     })
-
   }
 
   render() {
+
+    // const { educationalExperience } = this.state
+
     return (
       <main className="App">
         <section>
@@ -65,20 +78,21 @@ class App extends Component {
             startDate={this.state.workExperience.startDate}
             endDate={this.state.workExperience.endDate}
             handleFormChange={this.handleFormChange}
+            handleFormSubmit={this.handleFormSubmit}
           />
         </section>
         <section>
           <div className='profile-header'>
-            {this.state.telephone}
-            <h3>{this.state.firstname} {this.state.lastname}</h3>
+            {this.state.telephone && this.state.telephone}
+            <h3>{this.state.firstname && this.state.firstname} {this.state.lastname && this.state.lastname}</h3>
             <span>
               <ul>
-                <li>{this.state.email}</li></ul>            
+                <li>{this.state.email && this.state.email}</li></ul>            
             </span>
           </div>
           
           <h3 className='profile___education___wrapper'>Educational Experience</h3>
-            {this.state.educationalExperiences ? this.state.educationalExperiences.map((eduExp, i) => (
+            {this.state.educationalExperiences.map((eduExp, i) => (
                 <div key={i + 1}>
                   <div className='profile-education'>
                     <h3>{eduExp.town}, {eduExp.city}</h3>
@@ -91,10 +105,10 @@ class App extends Component {
                       </ul>
                   </div>
                 </div>
-            )): null}       
+            ))}       
 
           <h3 className='profile___work___wrapper'>Practical Experience</h3>
-          {this.state.workExperiences.map((workExp, i) => (
+          {this.state.workExperiences ? this.state.workExperiences.map((workExp, i) => (
             <div key={i + 1}>
               <div className='profile-work'>
                 <h3>{workExp.positionTitle}</h3>
@@ -108,7 +122,7 @@ class App extends Component {
                 </ul>
               </div>
             </div>
-          ))}
+          )) : null}
           
         </section>
       </main>
@@ -116,40 +130,5 @@ class App extends Component {
   }
 }
 
-const wkExperiences = [
-  {
-    companyName: 'builds and support',
-        positionTitle: 'Software Developer - Full Stack',
-        jobDescription: 
-        `Build customer internal customer facing application solutions that actually
-          works, from user requierment gathering, desing and development - double as a QA on the
-          platform enginering team responsible for shipping new features out the door in a timely
-          fashion.`,
-        startDate: '2022',
-        endDate: 'present'
-  },
-  {
-    companyName: 'builds and support',
-        positionTitle: 'Software Developer - Full Stack',
-        jobDescription: 
-        `Build customer internal customer facing application solutions that actually
-          works, from user requierment gathering, desing and development - double as a QA on the
-          platform enginering team responsible for shipping new features out the door in a timely
-          fashion.`,
-        startDate: '2022',
-        endDate: 'present'
-  },
-  {
-    companyName: 'builds and support',
-        positionTitle: 'Software Developer - Full Stack',
-        jobDescription: 
-        `Build customer internal customer facing application solutions that actually
-          works, from user requierment gathering, desing and development - double as a QA on the
-          platform enginering team responsible for shipping new features out the door in a timely
-          fashion.`,
-        startDate: '2022',
-        endDate: 'present'
-  }
-]
 
 export default App;
