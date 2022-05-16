@@ -10,13 +10,32 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;
+    gap: 16px;
+}
+
+.personal_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.educational_experience_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.practical_experience_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 form {
-    border: 1px solid;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    /* border: 1px solid;
+    padding: 10px; */
 }
 
 .profile-header {
@@ -25,12 +44,16 @@ form {
     justify-content: space-between;
 }
 
+.profile___education___wrapper {
+    border-bottom: 1px solid;
+}
+
 .profile-education {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: -20px;
-    border-top: 1px solid;
+    
 }
 
 .profile___edication___town___program {
@@ -39,10 +62,13 @@ form {
     margin-top: -10px;
 }
 
+.profile___work___wrapper {
+    border-bottom: 1px solid;
+}
+
 .profile-work {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: -20px;
-    border-top: 1px solid;
 }
