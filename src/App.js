@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Form from './components/Form';
+import PreviewForm from './components/PreviewForm';
 
 class App extends Component {
   constructor(props) {
@@ -11,11 +12,14 @@ class App extends Component {
         email: 'jeff.dean@yaol.com',
         telephone: '+233-20-34-33-234',
         educationalExperiences: [],
-        educationalExperience: {
-          schoolAttended: '',
-          studyTitle: '',
-          dateOfStudy: '',
-        },
+        educationalExperience: [
+          {
+            id: Math.floor(Math.random() * 100 / 2),
+            schoolAttended: '',
+            studyTitle: '',
+            dateOfStudy: '',
+          }
+        ],
         workExperiences: [],
         workExperience: {
           companyName: '',
@@ -28,33 +32,58 @@ class App extends Component {
     }
 
     this.handleFormChange = this.handleFormChange.bind(this)
+    this.addNewEduExperience = this.addNewEduExperience.bind(this)
+    this.handleEducationalFormChange = this.handleEducationalFormChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  }
+
+  handleEducationalFormChange(event, id) {
+    console.log(event.target.value + id);
+    
+    this.setState({
+     
+        // return {
+        //   educationalExperience: [prevState.educationalExperience.map(educateExpe => {
+        //   if (educateExpe.id === id) {
+        //     return {...educateExpe, [event.target.name]: event.target.value}
+        //   }
+        //     return educateExpe
+        //   })]
+        //   // educationalExperience: [...eded]
+        // }
+      })
+  }
+
+  addNewEduExperience(event) {
+    event.preventDefault();
+    this.setState(prevState => ({
+        educationalExperience: [...prevState.educationalExperience,
+          {
+            id: Math.floor(Math.random() * 100 / 2),
+            schoolAttended: '',
+            studyTitle: '',
+            dateOfStudy: '',
+          }
+        ],
+    }))
   }
 
   handleFormChange(event) {
     this.setState({
-          [event.target.name]: event.target.value,
-          educationalExperience: {
-            ...this.state.educationalExperience,
-            [event.target.name]: event.target.value
-          },
-          workExperience: {
-            ...this.state.workExperience,
-            [event.target.name]: event.target.value
-          }
-      })
-    }
+      [event.target.name]: event.target.value,
+      workExperience: {
+        ...this.state.workExperience,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
     
   handleFormSubmit(event) {
     event.preventDefault();
-    // alert('form submitted');
-    console.log(this.state.educationalExperience)
-    this.setState(prevState => {
-      return {
+    this.setState(prevState => ({
         educationalExperiences: [...prevState.educationalExperiences, this.state.educationalExperience],
         workExperiences: [...prevState.workExperiences, this.state.workExperience],
-      }
-    })
+    }))
   }
 
   render() {
@@ -69,19 +98,26 @@ class App extends Component {
             lastname={this.state.lastname}
             email={this.state.email}
             telephone={this.state.telephone}
-            schoolAttended={this.state.educationalExperience.schoolAttended}
-            studyTitle={this.state.educationalExperience.studyTitle}
-            dateOfStudy={this.state.educationalExperience.dateOfStudy}
+            educationalExperience={this.state.educationalExperience}
             companyName={this.state.workExperience.companyName}
             jobDescription={this.state.workExperience.jobDescription}
             positionTitle={this.state.workExperience.positionTitle}
             startDate={this.state.workExperience.startDate}
             endDate={this.state.workExperience.endDate}
             handleFormChange={this.handleFormChange}
+            addNewEduExperience={this.addNewEduExperience}
+            handleEducationalFormChange={this.handleEducationalFormChange}
             handleFormSubmit={this.handleFormSubmit}
           />
         </section>
         <section>
+          <PreviewForm 
+            educationalExperience={this.state.educationalExperience}
+            firstname={this.state.firstname}
+            lastname={this.state.lastname}
+            email={this.state.email}
+            telephone={this.state.telephone}
+          />
           <div className='profile-header'>
             {this.state.telephone && this.state.telephone}
             <h3>{this.state.firstname && this.state.firstname} {this.state.lastname && this.state.lastname}</h3>

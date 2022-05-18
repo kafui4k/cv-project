@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import Personal from './Personal'
 
 class PreviewForm extends Component {
   render() {
     return (
       <section>
         <h1>Preview Form</h1>
-        <Personal />
+        schoolAttended: {this.props.educationalExperience.schoolAttended}
+        firstname {this.props.firstname}
+        lastname {this.props.lastname}
+        email {this.props.email}
+        telephone {this.props.telephone}
       </section>
     )
   }
