@@ -45,7 +45,7 @@ class Form extends Component {
                 endDate={endDate}
                 handleFormChange={handleFormChange}
             />
-            <button className='btn-generate-resume' type='submit' onClick={handleFormSubmit}>Submit</button>
+            <button className='btn-generate-resume' type='submit'>Submit</button>
         </form> 
     )
   }

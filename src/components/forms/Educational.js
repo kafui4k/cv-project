@@ -9,7 +9,7 @@ class Educational extends Component {
     const eduexpp = educationalExperience.map((educaExp) => 
       <EducationalItem
         key={educaExp.id}
-        id={educaExp.id}
+        // id={educaExp.id}
         educaExp={educaExp}
         onChange={handleEducationalFormChange}
       />
@@ -17,7 +17,8 @@ class Educational extends Component {
 
     return (
       <div className='educational_experience_wrapper'>
-        {eduexpp}        
+        <h1 className='educational_wrapper___title'>Educational Experience</h1>
+        {eduexpp}
         <button type='submit' onClick={addNewEduExperience}>add another experience</button>
       </div>
     )

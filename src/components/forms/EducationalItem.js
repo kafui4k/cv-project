@@ -4,11 +4,11 @@ import Input from '../Input'
 class EducationalItem extends Component {
   render() {
 
-    const {id, onChange, educaExp} = this.props
+    const {onChange, educaExp} = this.props
 
     return (
       <>
-        <h1 className='educational_wrapper___title'>Educational Experience</h1>
+        
             <label htmlFor='schoolAttended'>School Attended</label>
             <Input
                 id="schoolAttended"
@@ -16,7 +16,7 @@ class EducationalItem extends Component {
                 name='schoolAttended'
                 placeholder='e.g: School of Hardknocks'
                 value={educaExp.schoolAttended}
-                onChange={(event) => onChange(event, id)}
+                onChange={(event) => onChange(event, educaExp.id)}
             />
 
             <label htmlFor='studyTitle'>Title of Study</label>
@@ -26,7 +26,7 @@ class EducationalItem extends Component {
                 name='studyTitle'
                 placeholder='e.g: BSC Computer Science'
                 value={educaExp.studyTitle}
-                onChange={(event) => onChange(event, id)}
+                onChange={(event) => onChange(event, educaExp.id)}
                 />
 
              <label htmlFor='dateOfStudy'>Date of Study</label>
@@ -35,7 +35,7 @@ class EducationalItem extends Component {
                 type='date'
                 name='dateOfStudy'
                 value={educaExp.dateOfStudy}
-                onChange={(event) => onChange(event, id)}
+                onChange={(event) => onChange(event, educaExp.id)}
             />
       </>
     )

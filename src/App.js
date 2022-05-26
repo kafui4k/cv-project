@@ -15,8 +15,8 @@ class App extends Component {
         educationalExperience: [
           {
             id: Math.floor(Math.random() * 100 / 2),
-            schoolAttended: '',
-            studyTitle: '',
+            schoolAttended: 'Bishop Herman College',
+            studyTitle: 'Business',
             dateOfStudy: '',
           }
         ],
@@ -37,21 +37,32 @@ class App extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
-  handleEducationalFormChange(event, id) {
-    console.log(event.target.value + id);
-    
-    this.setState({
-     
-        // return {
-        //   educationalExperience: [prevState.educationalExperience.map(educateExpe => {
-        //   if (educateExpe.id === id) {
-        //     return {...educateExpe, [event.target.name]: event.target.value}
-        //   }
-        //     return educateExpe
-        //   })]
-        //   // educationalExperience: [...eded]
-        // }
-      })
+  handleEducationalFormChange(e, id) {
+    this.setState(prevData => ({
+      ...prevData,
+      educationalExperience: prevData.educationalExperience.map(itm => 
+        itm.id === id ? {...itm, [e.target.name]: e.target.value} : itm)}))
+
+    // this.setState(prevState => {
+    //   const eduObj = prevState.educationalExperience.findIndex(obj => obj.id === id)
+    //   prevState.educationalExperience[eduObj][e.target.name] = e.target.value
+
+    //   return {
+    //     ...prevState,
+    //     educationalExperience: [
+    //       ...prevState.educationalExperience.splice(0, eduObj),
+    //       prevState.educationalExperience[eduObj],
+    //       // ...prevState.educationalExperience.splice(eduObj + 1)
+    //     ]
+    //   }
+    // })
+
+
+    // this.setState(prevState => {
+    //   return {
+    //     educationalExperience: [...prevState.educationalExperience.concat(event.target.value)]
+    //   }     
+    // })
   }
 
   addNewEduExperience(event) {
@@ -81,8 +92,9 @@ class App extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     this.setState(prevState => ({
-        educationalExperiences: [...prevState.educationalExperiences, this.state.educationalExperience],
-        workExperiences: [...prevState.workExperiences, this.state.workExperience],
+        ...prevState.educationalExperiences,
+        educationalExperiences: this.state.educationalExperience
+        // workExperiences: [...prevState.workExperiences, this.state.workExperience],
     }))
   }
 
@@ -117,6 +129,11 @@ class App extends Component {
             lastname={this.state.lastname}
             email={this.state.email}
             telephone={this.state.telephone}
+            companyName={this.state.workExperience.companyName}
+            jobDescription={this.state.workExperience.jobDescription}
+            positionTitle={this.state.workExperience.positionTitle}
+            startDate={this.state.workExperience.startDate}
+            endDate={this.state.workExperience.endDate}
           />
           <div className='profile-header'>
             {this.state.telephone && this.state.telephone}
