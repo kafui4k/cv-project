@@ -11,16 +11,13 @@ class Form extends Component {
         lastname,
         email,
         telephone,
-        companyName,
-        jobDescription,
-        positionTitle,
-        startDate,
-        endDate,
         handleFormChange,
-        addNewEduExperience,
         handleFormSubmit,
         educationalExperience,
-        handleEducationalFormChange
+        handleEducationalFormChange,
+        addNewEduExperience,
+        workExperience,
+        handleWorkExperienceFormChange
     } = this.props
 
     return (
@@ -38,12 +35,8 @@ class Form extends Component {
                 handleEducationalFormChange={handleEducationalFormChange}
             />
             <Practical
-                companyName={companyName}
-                jobDescription={jobDescription}
-                positionTitle={positionTitle}
-                startDate={startDate}
-                endDate={endDate}
-                handleFormChange={handleFormChange}
+                workExperience={workExperience}
+                handleWorkExperienceFormChange={handleWorkExperienceFormChange}
             />
             <button className='btn-generate-resume' type='submit'>Submit</button>
         </form> 

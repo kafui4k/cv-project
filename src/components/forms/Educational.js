@@ -9,7 +9,6 @@ class Educational extends Component {
     const eduexpp = educationalExperience.map((educaExp) => 
       <EducationalItem
         key={educaExp.id}
-        // id={educaExp.id}
         educaExp={educaExp}
         onChange={handleEducationalFormChange}
       />

@@ -16,11 +16,16 @@ class PreviewForm extends Component {
             <br/><strong>date: {eduXp.dateOfStudy}</strong>
           </span>
         )}
-        <br/>companyName: {this.props.companyName}
-        <br/>jobDescription: {this.props.jobDescription}
-        <br/>positionTitle: {this.props.positionTitle}
-        <br/>startDate: {this.props.startDate}
-        <br/>endDate: {this.props.endDate}
+        <br/>
+        {this.props.workExperience.map(wrkExp =>
+          <span key={wrkExp.id}>
+            <br/>companyName: {wrkExp.companyName}
+            <br/>jobDescription: {wrkExp.jobDescription}
+            <br/>positionTitle: {wrkExp.positionTitle}
+            <br/>startDate: {wrkExp.startDate}
+            <br/>endDate: {wrkExp.endDate}
+          </span>
+          )}
       </section>
     )
   }
