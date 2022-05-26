@@ -6,7 +6,8 @@ class Practical extends Component {
 
     const {
       workExperience,
-      handleWorkExperienceFormChange
+      handleWorkExperienceFormChange,
+      addNewWorkExperience
     } = this.props
 
     const workExperiences = workExperience.map(workExp => 
@@ -20,6 +21,7 @@ class Practical extends Component {
       <div className='practical_experience_wrapper'>
         <h1 className='pinfo___title'>Practical Experience</h1>
         {workExperiences}
+        <button type='submit' onClick={addNewWorkExperience}>add another work experience</button>
       </div>
     )
   }

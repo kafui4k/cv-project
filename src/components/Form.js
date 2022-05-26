@@ -17,7 +17,8 @@ class Form extends Component {
         handleEducationalFormChange,
         addNewEduExperience,
         workExperience,
-        handleWorkExperienceFormChange
+        handleWorkExperienceFormChange,
+        addNewWorkExperience
     } = this.props
 
     return (
@@ -37,6 +38,7 @@ class Form extends Component {
             <Practical
                 workExperience={workExperience}
                 handleWorkExperienceFormChange={handleWorkExperienceFormChange}
+                addNewWorkExperience={addNewWorkExperience}
             />
             <button className='btn-generate-resume' type='submit'>Submit</button>
         </form> 

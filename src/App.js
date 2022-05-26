@@ -18,6 +18,8 @@ class App extends Component {
             schoolAttended: 'Bishop Herman College',
             studyTitle: 'Business',
             dateOfStudy: '',
+            town: 'ho',
+            city: 'Volta'
           }
         ],
         workExperiences: [],
@@ -36,6 +38,7 @@ class App extends Component {
     this.addNewEduExperience = this.addNewEduExperience.bind(this)
     this.handleEducationalFormChange = this.handleEducationalFormChange.bind(this)
     this.handleWorkExperienceFormChange = this.handleWorkExperienceFormChange.bind(this)
+    this.addNewWorkExperience = this.addNewWorkExperience.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
@@ -67,6 +70,21 @@ class App extends Component {
         workExpItem.id === id ? 
         {...workExpItem, [event.target.name]: event.target.value} : workExpItem
     )}))
+  }
+
+  addNewWorkExperience(event) {
+    event.preventDefault();
+    this.setState(prevState => ({
+      workExperience: [...prevState.workExperience, 
+      {
+        id: Math.floor(Math.random() * 100 / 2),
+        companyName: '',
+        positionTitle: '',
+        jobDescription: '',
+        startDate: '',
+        endDate: ''
+      }]
+    }))
   }
 
   handleFormChange(event) {
@@ -103,18 +121,11 @@ class App extends Component {
             addNewEduExperience={this.addNewEduExperience}
             workExperience={this.state.workExperience}
             handleWorkExperienceFormChange={this.handleWorkExperienceFormChange}
+            addNewWorkExperience={this.addNewWorkExperience}
             handleFormSubmit={this.handleFormSubmit}
           />
         </section>
         <section>
-          <PreviewForm 
-            educationalExperience={this.state.educationalExperience}
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            email={this.state.email}
-            telephone={this.state.telephone}
-            workExperience={this.state.workExperience}
-          />
           <div className='profile-header'>
             {this.state.telephone && this.state.telephone}
             <h3>{this.state.firstname && this.state.firstname} {this.state.lastname && this.state.lastname}</h3>
