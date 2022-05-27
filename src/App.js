@@ -7,10 +7,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-        firstname: "Jeff Dean",
-        lastname: 'Mscott',
-        email: 'jeff.dean@yaol.com',
-        telephone: '+233-20-34-33-234',
+        bioData: {
+          firstname: "Jeff Dean",
+          lastname: 'Mscott',
+          email: 'jeff.dean@yaol.com',
+          telephone: '+233-20-34-33-234',
+        },
         educationalExperiences: [],
         educationalExperience: [
           {
@@ -89,7 +91,7 @@ class App extends Component {
 
   handleFormChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      bioData: {[event.target.name]: event.target.value},
     })
   }
     
@@ -111,10 +113,7 @@ class App extends Component {
       <main className="App">
         <section>
           <Form
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            email={this.state.email}
-            telephone={this.state.telephone}
+            bioData={this.state.bioData}
             handleFormChange={this.handleFormChange}
             educationalExperience={this.state.educationalExperience}
             handleEducationalFormChange={this.handleEducationalFormChange}
@@ -127,11 +126,11 @@ class App extends Component {
         </section>
         <section>
           <div className='profile-header'>
-            {this.state.telephone && this.state.telephone}
-            <h3>{this.state.firstname && this.state.firstname} {this.state.lastname && this.state.lastname}</h3>
+            {this.state.bioData.telephone && this.state.bioData.telephone}
+            <h3>{this.state.bioData.firstname && this.state.bioData.firstname} {this.state.bioData.lastname && this.state.bioData.lastname}</h3>
             <span>
               <ul>
-                <li>{this.state.email && this.state.email}</li></ul>            
+                <li>{this.state.bioData.email && this.state.bioData.email}</li></ul>            
             </span>
           </div>
           

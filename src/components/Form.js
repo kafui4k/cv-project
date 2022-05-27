@@ -7,10 +7,7 @@ class Form extends Component {
   render() {
 
     const {
-        firstname,
-        lastname,
-        email,
-        telephone,
+        bioData,
         handleFormChange,
         handleFormSubmit,
         educationalExperience,
@@ -24,10 +21,10 @@ class Form extends Component {
     return (
         <form className='pinfo___form' onSubmit={handleFormSubmit}>
             <Personal
-                firstname={firstname}
-                lastname={lastname}
-                email={email}
-                telephone={telephone}
+                firstname={bioData.firstname}
+                lastname={bioData.lastname}
+                email={bioData.email}
+                telephone={bioData.telephone}
                 handleFormChange={handleFormChange}
             />
             <Educational
