@@ -8,7 +8,7 @@ class Form extends Component {
 
     const {
         bioData,
-        handleFormChange,
+        handleBioDataFormChange,
         handleFormSubmit,
         educationalExperience,
         handleEducationalFormChange,
@@ -25,7 +25,7 @@ class Form extends Component {
                 lastname={bioData.lastname}
                 email={bioData.email}
                 telephone={bioData.telephone}
-                handleFormChange={handleFormChange}
+                handleBioDataFormChange={handleBioDataFormChange}
             />
             <Educational
                 educationalExperience={educationalExperience}

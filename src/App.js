@@ -36,12 +36,18 @@ class App extends Component {
         
     }
 
-    this.handleFormChange = this.handleFormChange.bind(this)
+    this.handleBioDataFormChange = this.handleBioDataFormChange.bind(this)
     this.addNewEduExperience = this.addNewEduExperience.bind(this)
     this.handleEducationalFormChange = this.handleEducationalFormChange.bind(this)
     this.handleWorkExperienceFormChange = this.handleWorkExperienceFormChange.bind(this)
     this.addNewWorkExperience = this.addNewWorkExperience.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  }
+  
+  handleBioDataFormChange(event) {
+    this.setState(prevState => ({
+      bioData: {...prevState.bioData, [event.target.name]: event.target.value}
+    }))
   }
 
   handleEducationalFormChange(e, id) {
@@ -89,11 +95,6 @@ class App extends Component {
     }))
   }
 
-  handleFormChange(event) {
-    this.setState({
-      bioData: {[event.target.name]: event.target.value},
-    })
-  }
     
   handleFormSubmit(event) {
     event.preventDefault();
@@ -114,7 +115,7 @@ class App extends Component {
         <section>
           <Form
             bioData={this.state.bioData}
-            handleFormChange={this.handleFormChange}
+            handleBioDataFormChange={this.handleBioDataFormChange}
             educationalExperience={this.state.educationalExperience}
             handleEducationalFormChange={this.handleEducationalFormChange}
             addNewEduExperience={this.addNewEduExperience}

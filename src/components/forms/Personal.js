@@ -4,7 +4,7 @@ import Input from '../Input'
 class Personal extends Component {
   render() {
 
-    const {firstname, lastname, email, telephone, handleFormChange} = this.props
+    const {firstname, lastname, email, telephone, handleBioDataFormChange} = this.props
 
     return (
       <div className='personal_info_wrapper'>
@@ -17,7 +17,7 @@ class Personal extends Component {
             name="firstname"
             placeholder='e.g: John'
             value={firstname}
-            onChange={handleFormChange}
+            onChange={handleBioDataFormChange}
         />
 
         <label htmlFor='lastname' className='personal_info_wrapper___label'>Last name</label>
@@ -27,7 +27,7 @@ class Personal extends Component {
           name="lastname"
           placeholder='e.g:Doe'
           value={lastname}
-          onChange={handleFormChange}
+          onChange={handleBioDataFormChange}
         />
 
         <label htmlFor='email' className='personal_info_wrapper___label'>Email address</label>
@@ -37,7 +37,7 @@ class Personal extends Component {
             name="email"
             placeholder='e.g: jd@admin.com'
             value={email}
-            onChange={handleFormChange}
+            onChange={handleBioDataFormChange}
         />
 
         <label htmlFor='telephone' className='personal_info_wrapper___label'>Tel</label>
@@ -47,7 +47,7 @@ class Personal extends Component {
             name="telephone"
             placeholder='e.g: 000 222 000 333'
             value={telephone}
-            onChange={handleFormChange}
+            onChange={handleBioDataFormChange}
         />
       </div>
     )
