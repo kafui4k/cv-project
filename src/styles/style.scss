@@ -1,45 +1,54 @@
-*, html {
+*, *::before,
+*::after {
     box-sizing: border-box;
+    // margin: 0;
+    // padding: 0;
 }
+
+// $body-color: linear-gradient(rgba(12, 122, 100), rgba(48, 32, 72));
+$displayFlex: flex;
+$displayGrid: grid;
 
 body {
     height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
 }
 
 main {
-    display: grid;
+    display: $displayGrid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;
     gap: 16px;
 }
 
 .personal_info_wrapper {
-    display: flex;
+    display: $displayFlex;
     flex-direction: column;
     gap: 8px;
 }
 
 .educational_experience_wrapper {
-    display: flex;
+    display: $displayFlex;
     flex-direction: column;
     gap: 8px;
 }
 
 .practical_experience_wrapper {
-    display: flex;
+    display: $displayFlex;
     flex-direction: column;
     gap: 8px;
 }
 
 form {
-    display: flex;
+    display: $displayFlex;
     flex-direction: column;
     /* border: 1px solid;
     padding: 10px; */
 }
 
 .profile-header {
-    display: flex;
+    display: $displayFlex;
     align-items: center;
     justify-content: space-between;
 }
@@ -49,7 +58,7 @@ form {
 }
 
 .profile-education {
-    display: flex;
+    display: $displayFlex;
     align-items: center;
     justify-content: space-between;
     margin-top: -20px;
@@ -57,7 +66,7 @@ form {
 }
 
 .profile___edication___town___program {
-    display: flex;
+    display: $displayFlex;
     flex-direction: column;
     margin-top: -10px;
 }
@@ -67,7 +76,7 @@ form {
 }
 
 .profile-work {
-    display: flex;
+    display: $displayFlex;
     justify-content: space-between;
     align-items: center;
     margin-top: -20px;

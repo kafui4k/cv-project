@@ -9,19 +9,19 @@ class App extends Component {
     this.state = {
         generateResume: false,
         bioData: {
-          firstname: "Jeff Dean",
-          lastname: 'Mscott',
-          email: 'jeff.dean@yaol.com',
-          telephone: '+233-20-34-33-234',
-          location: 'Kumasi, Ashanti',
-          profileLink: 'kafui4k.github.io'
+          firstname: "",
+          lastname: '',
+          email: '',
+          telephone: '',
+          location: '',
+          profileLink: ''
         },
         educationalExperiences: [],
         educationalExperience: [
           {
             id: Math.floor(Math.random() * 100 / 2),
-            schoolAttended: 'Bishop Herman College',
-            studyTitle: 'Business',
+            schoolAttended: '',
+            studyTitle: '',
             studyType: '',
             start: '',
             end: '',
