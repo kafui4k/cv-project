@@ -27,6 +27,24 @@ class PracticalItem extends Component {
             onChange={(event) => onChange(event, experience.id)}
         />
 
+        <label htmlFor='jobType'>Job Type</label>
+        <Input
+            type='text'
+            name='jobType'
+            placeholder='e.g: Contract/ Full-Time/ Part-Time etc...'
+            value={experience.jobType}
+            onChange={(event) => onChange(event, experience.id)}
+        />
+
+        <label htmlFor='location'>Location</label>
+        <Input
+            type='text'
+            name='location'
+            placeholder='e.g: Remote/Onsite etc...'
+            value={experience.location}
+            onChange={(event) => onChange(event, experience.id)}
+        />
+
         <label htmlFor='jobDescription'>Job/Role Description</label>
         <TextArea
             name='jobDescription'
@@ -36,16 +54,18 @@ class PracticalItem extends Component {
 
         <label htmlFor='startDate'>Start Date</label>
         <Input
-            type='date'
+            type='text'
             name='startDate'
+            placeholder='September 2020'
             value={experience.startDate}
             onChange={(event) => onChange(event, experience.id)}
         />
 
         <label htmlFor='endDate'>End Date</label>
         <Input
-            type='date'
+            type='text'
             name='endDate'
+            placeholder='January 2022 / Present etc...'
             value={experience.endDate}
             onChange={(event) => onChange(event, experience.id)}
         />

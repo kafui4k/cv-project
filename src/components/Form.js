@@ -21,10 +21,11 @@ class Form extends Component {
     return (
         <form className='pinfo___form' onSubmit={handleFormSubmit}>
             <Personal
-                firstname={bioData.firstname}
-                lastname={bioData.lastname}
-                email={bioData.email}
-                telephone={bioData.telephone}
+                // firstname={bioData.firstname}
+                // lastname={bioData.lastname}
+                // email={bioData.email}
+                // telephone={bioData.telephone}
+                bioData={bioData}
                 handleBioDataFormChange={handleBioDataFormChange}
             />
             <Educational

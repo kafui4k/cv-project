@@ -4,7 +4,7 @@ import Input from '../Input'
 class Personal extends Component {
   render() {
 
-    const {firstname, lastname, email, telephone, handleBioDataFormChange} = this.props
+    const {bioData, handleBioDataFormChange} = this.props
 
     return (
       <div className='personal_info_wrapper'>
@@ -16,7 +16,7 @@ class Personal extends Component {
             type="text"
             name="firstname"
             placeholder='e.g: John'
-            value={firstname}
+            value={bioData.firstname}
             onChange={handleBioDataFormChange}
         />
 
@@ -26,7 +26,7 @@ class Personal extends Component {
           type="text"
           name="lastname"
           placeholder='e.g:Doe'
-          value={lastname}
+          value={bioData.lastname}
           onChange={handleBioDataFormChange}
         />
 
@@ -36,17 +36,37 @@ class Personal extends Component {
             type="email"
             name="email"
             placeholder='e.g: jd@admin.com'
-            value={email}
+            value={bioData.email}
             onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='telephone' className='personal_info_wrapper___label'>Tel</label>
+        <label htmlFor='telephone' className='personal_info_wrapper___label'>Mobile #</label>
         <Input
             id='telephone'
             type="tel"
             name="telephone"
             placeholder='e.g: 000 222 000 333'
-            value={telephone}
+            value={bioData.telephone}
+            onChange={handleBioDataFormChange}
+        />
+
+        <label htmlFor='location' className='personal_info_wrapper___label'>Location</label>
+        <Input
+            id='location'
+            type="text"
+            name="location"
+            placeholder='e.g: Kumasi, Ashanti'
+            value={bioData.location}
+            onChange={handleBioDataFormChange}
+        />
+
+        <label htmlFor='profileLink' className='personal_info_wrapper___label'>Profile Link</label>
+        <Input
+            id='profileLink'
+            type="text"
+            name="profileLink"
+            placeholder='e.g: kafui4k.github.io'
+            value={bioData.profileLink}
             onChange={handleBioDataFormChange}
         />
       </div>

@@ -7,11 +7,14 @@ class App extends Component {
     super(props)
 
     this.state = {
+        generateResume: false,
         bioData: {
           firstname: "Jeff Dean",
           lastname: 'Mscott',
           email: 'jeff.dean@yaol.com',
           telephone: '+233-20-34-33-234',
+          location: 'Kumasi, Ashanti',
+          profileLink: 'kafui4k.github.io'
         },
         educationalExperiences: [],
         educationalExperience: [
@@ -19,9 +22,10 @@ class App extends Component {
             id: Math.floor(Math.random() * 100 / 2),
             schoolAttended: 'Bishop Herman College',
             studyTitle: 'Business',
-            dateOfStudy: '',
-            town: 'ho',
-            city: 'Volta'
+            studyType: '',
+            start: '',
+            end: '',
+            location: ''
           }
         ],
         workExperiences: [],
@@ -29,6 +33,8 @@ class App extends Component {
           id: Math.floor(Math.random() * 100 / 2),
           companyName: '',
           positionTitle: '',
+          jobType: '',
+          location: '',
           jobDescription: '',
           startDate: '',
           endDate: ''
@@ -102,8 +108,12 @@ class App extends Component {
         ...prevState.educationalExperiences,
         educationalExperiences: this.state.educationalExperience,
         ...prevState.workExperiences,
-        workExperiences: this.state.workExperience
+        workExperiences: this.state.workExperience,        
     }))
+
+    setTimeout(() => {
+      this.setState({generateResume: true})
+    }, 5000);
   }
 
   render() {
@@ -112,63 +122,23 @@ class App extends Component {
 
     return (
       <main className="App">
-        <section>
-          <Form
-            bioData={this.state.bioData}
-            handleBioDataFormChange={this.handleBioDataFormChange}
-            educationalExperience={this.state.educationalExperience}
-            handleEducationalFormChange={this.handleEducationalFormChange}
-            addNewEduExperience={this.addNewEduExperience}
-            workExperience={this.state.workExperience}
-            handleWorkExperienceFormChange={this.handleWorkExperienceFormChange}
-            addNewWorkExperience={this.addNewWorkExperience}
-            handleFormSubmit={this.handleFormSubmit}
-          />
-        </section>
-        <section>
-          <div className='profile-header'>
-            {this.state.bioData.telephone && this.state.bioData.telephone}
-            <h3>{this.state.bioData.firstname && this.state.bioData.firstname} {this.state.bioData.lastname && this.state.bioData.lastname}</h3>
-            <span>
-              <ul>
-                <li>{this.state.bioData.email && this.state.bioData.email}</li></ul>            
-            </span>
-          </div>
-          
-          <h3 className='profile___education___wrapper'>Educational Experience</h3>
-            {this.state.educationalExperiences.map((eduExp, i) => (
-                <div key={i + 1}>
-                  <div className='profile-education'>
-                    <h3>{eduExp.town}, {eduExp.city}</h3>
-                    <h3>{eduExp.schoolAttended}</h3>
-                    <h3>{eduExp.dateOfStudy}</h3>
-                  </div>
-                  <div className='profile___edication___town___program'>
-                      <ul>
-                        <li>{eduExp.studyTitle}</li>
-                      </ul>
-                  </div>
-                </div>
-            ))}       
-
-          <h3 className='profile___work___wrapper'>Practical Experience</h3>
-          {this.state.workExperiences ? this.state.workExperiences.map((workExp, i) => (
-            <div key={i + 1}>
-              <div className='profile-work'>
-                <h3>{workExp.positionTitle}</h3>
-                <h3>{workExp.companyName}</h3>
-                <h3>{workExp.startDate} - {workExp.endDate}</h3>
-              </div>
-              <div>
-                <span>Remote | Onsite</span>
-                <ul>
-                  <li>{workExp.jobDescription}</li>
-                </ul>
-              </div>
-            </div>
-          )) : null}
-          
-        </section>
+        <Form
+          bioData={this.state.bioData}
+          handleBioDataFormChange={this.handleBioDataFormChange}
+          educationalExperience={this.state.educationalExperience}
+          handleEducationalFormChange={this.handleEducationalFormChange}
+          addNewEduExperience={this.addNewEduExperience}
+          workExperience={this.state.workExperience}
+          handleWorkExperienceFormChange={this.handleWorkExperienceFormChange}
+          addNewWorkExperience={this.addNewWorkExperience}
+          handleFormSubmit={this.handleFormSubmit}
+        />
+        <PreviewForm
+          generateResume={this.state.generateResume}
+          bioData={this.state.bioData}
+          educationalExperiences={this.state.educationalExperiences}
+          workExperiences={this.state.workExperiences}
+        />
       </main>
     );
   }
