@@ -4,33 +4,34 @@ import PreviewForm from './components/PreviewForm';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-        generateResume: false,
-        bioData: {
-          firstname: "",
-          lastname: '',
-          email: '',
-          telephone: '',
-          location: '',
-          profileLink: ''
-        },
-        educationalExperiences: [],
-        educationalExperience: [
-          {
-            id: Math.floor(Math.random() * 100 / 2),
-            schoolAttended: '',
-            studyTitle: '',
-            studyType: '',
-            start: '',
-            end: '',
-            location: ''
-          }
-        ],
-        workExperiences: [],
-        workExperience: [{
-          id: Math.floor(Math.random() * 100 / 2),
+      generateResume: false,
+      bioData: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        telephone: '',
+        location: '',
+        profileLink: ''
+      },
+      educationalExperiences: [],
+      educationalExperience: [
+        {
+          id: Math.floor((Math.random() * 100) / 2),
+          schoolAttended: '',
+          studyTitle: '',
+          studyType: '',
+          start: '',
+          end: '',
+          location: ''
+        }
+      ],
+      workExperiences: [],
+      workExperience: [
+        {
+          id: Math.floor((Math.random() * 100) / 2),
           companyName: '',
           positionTitle: '',
           jobType: '',
@@ -38,86 +39,93 @@ class App extends Component {
           jobDescription: '',
           startDate: '',
           endDate: ''
-        }]
-        
-    }
+        }
+      ]
+    };
 
-    this.handleBioDataFormChange = this.handleBioDataFormChange.bind(this)
-    this.addNewEduExperience = this.addNewEduExperience.bind(this)
-    this.handleEducationalFormChange = this.handleEducationalFormChange.bind(this)
-    this.handleWorkExperienceFormChange = this.handleWorkExperienceFormChange.bind(this)
-    this.addNewWorkExperience = this.addNewWorkExperience.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.handleBioDataFormChange = this.handleBioDataFormChange.bind(this);
+    this.addNewEduExperience = this.addNewEduExperience.bind(this);
+    this.handleEducationalFormChange =
+      this.handleEducationalFormChange.bind(this);
+    this.handleWorkExperienceFormChange =
+      this.handleWorkExperienceFormChange.bind(this);
+    this.addNewWorkExperience = this.addNewWorkExperience.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
-  
+
   handleBioDataFormChange(event) {
-    this.setState(prevState => ({
-      bioData: {...prevState.bioData, [event.target.name]: event.target.value}
-    }))
+    this.setState((prevState) => ({
+      bioData: { ...prevState.bioData, [event.target.name]: event.target.value }
+    }));
   }
 
   handleEducationalFormChange(e, id) {
-    this.setState(prevData => ({
+    this.setState((prevData) => ({
       ...prevData,
-      educationalExperience: prevData.educationalExperience.map(itm => 
-        itm.id === id ? {...itm, [e.target.name]: e.target.value} : itm)}))
+      educationalExperience: prevData.educationalExperience.map((itm) =>
+        itm.id === id ? { ...itm, [e.target.name]: e.target.value } : itm
+      )
+    }));
   }
 
   addNewEduExperience(event) {
     event.preventDefault();
-    this.setState(prevState => ({
-        educationalExperience: [...prevState.educationalExperience,
-          {
-            id: Math.floor(Math.random() * 100 / 2),
-            schoolAttended: '',
-            studyTitle: '',
-            dateOfStudy: '',
-          }
-        ],
-    }))
+    this.setState((prevState) => ({
+      educationalExperience: [
+        ...prevState.educationalExperience,
+        {
+          id: Math.floor((Math.random() * 100) / 2),
+          schoolAttended: '',
+          studyTitle: '',
+          dateOfStudy: ''
+        }
+      ]
+    }));
   }
 
   handleWorkExperienceFormChange(event, id) {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ...prevState,
-      workExperience: prevState.workExperience.map(workExpItem =>
-        workExpItem.id === id ? 
-        {...workExpItem, [event.target.name]: event.target.value} : workExpItem
-    )}))
+      workExperience: prevState.workExperience.map((workExpItem) =>
+        workExpItem.id === id
+          ? { ...workExpItem, [event.target.name]: event.target.value }
+          : workExpItem
+      )
+    }));
   }
 
   addNewWorkExperience(event) {
     event.preventDefault();
-    this.setState(prevState => ({
-      workExperience: [...prevState.workExperience, 
-      {
-        id: Math.floor(Math.random() * 100 / 2),
-        companyName: '',
-        positionTitle: '',
-        jobDescription: '',
-        startDate: '',
-        endDate: ''
-      }]
-    }))
+    this.setState((prevState) => ({
+      workExperience: [
+        ...prevState.workExperience,
+        {
+          id: Math.floor((Math.random() * 100) / 2),
+          companyName: '',
+          positionTitle: '',
+          jobDescription: '',
+          startDate: '',
+          endDate: ''
+        }
+      ]
+    }));
   }
 
-    
   handleFormSubmit(event) {
     event.preventDefault();
-    this.setState(prevState => ({
-        ...prevState.educationalExperiences,
-        educationalExperiences: this.state.educationalExperience,
-        ...prevState.workExperiences,
-        workExperiences: this.state.workExperience,        
-    }))
+    this.setState((prevState) => ({
+      ...prevState.educationalExperiences,
+      educationalExperiences: this.state.educationalExperience,
+      ...prevState.workExperiences,
+      workExperiences: this.state.workExperience
+    }));
 
     setTimeout(() => {
-      this.setState({generateResume: true})
+      this.setState({ generateResume: true });
     }, 5000);
   }
 
   render() {
-
     // const { educationalExperience } = this.state
 
     return (
@@ -143,6 +151,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
-import EducationalItem from './EducationalItem'
+import React, { Component } from 'react';
+import EducationalItem from './EducationalItem';
 
 class Educational extends Component {
   render() {
-  
-    const {handleEducationalFormChange, educationalExperience, addNewEduExperience} = this.props
+    const {
+      handleEducationalFormChange,
+      educationalExperience,
+      addNewEduExperience
+    } = this.props;
 
-    const eduexpp = educationalExperience.map((educaExp) => 
+    const eduexpp = educationalExperience.map((educaExp) => (
       <EducationalItem
         key={educaExp.id}
         educaExp={educaExp}
         onChange={handleEducationalFormChange}
       />
-    )
+    ));
 
     return (
-      <div className='educational_experience_wrapper'>
-        <h1 className='educational_wrapper___title'>Educational Experience</h1>
+      <div className="educational_experience_wrapper">
+        <h1 className="educational_wrapper___title">Educational Experience</h1>
         {eduexpp}
-        <button type='submit' onClick={addNewEduExperience}>add another experience</button>
+        <button type="submit" onClick={addNewEduExperience}>
+          add another experience
+        </button>
       </div>
-    )
+    );
   }
 }
 
-export default Educational
+export default Educational;

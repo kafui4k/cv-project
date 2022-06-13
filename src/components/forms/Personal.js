@@ -1,77 +1,88 @@
-import React, { Component } from 'react'
-import Input from '../Input'
+import React, { Component } from 'react';
+import Input from '../Input';
 
 class Personal extends Component {
   render() {
-
-    const {bioData, handleBioDataFormChange} = this.props
+    const { bioData, handleBioDataFormChange } = this.props;
 
     return (
-      <div className='personal_info_wrapper'>
-        <h1 className='personal_info_wrapper___title'>Personal Information</h1>
-        
-        <label htmlFor='firstname' className='personal_info_wrapper___label'>First name</label>
+      <div className="personal_info_wrapper">
+        <h1 className="personal_info_wrapper___title">Personal Information</h1>
+
+        <label htmlFor="firstname" className="personal_info_wrapper___label">
+          First name
+        </label>
         <Input
-            id='firstname'
-            type="text"
-            name="firstname"
-            placeholder='e.g: John'
-            value={bioData.firstname}
-            onChange={handleBioDataFormChange}
+          id="firstname"
+          type="text"
+          name="firstname"
+          placeholder="e.g: John"
+          value={bioData.firstname}
+          onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='lastname' className='personal_info_wrapper___label'>Last name</label>
+        <label htmlFor="lastname" className="personal_info_wrapper___label">
+          Last name
+        </label>
         <Input
-          id='lastname'
+          id="lastname"
           type="text"
           name="lastname"
-          placeholder='e.g:Doe'
+          placeholder="e.g:Doe"
           value={bioData.lastname}
           onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='email' className='personal_info_wrapper___label'>Email address</label>
+        <label htmlFor="email" className="personal_info_wrapper___label">
+          Email address
+        </label>
         <Input
-            id='email'
-            type="email"
-            name="email"
-            placeholder='e.g: jd@admin.com'
-            value={bioData.email}
-            onChange={handleBioDataFormChange}
+          id="email"
+          type="email"
+          name="email"
+          placeholder="e.g: jd@admin.com"
+          value={bioData.email}
+          onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='telephone' className='personal_info_wrapper___label'>Mobile #</label>
+        <label htmlFor="telephone" className="personal_info_wrapper___label">
+          Mobile #
+        </label>
         <Input
-            id='telephone'
-            type="tel"
-            name="telephone"
-            placeholder='e.g: 000 222 000 333'
-            value={bioData.telephone}
-            onChange={handleBioDataFormChange}
+          id="telephone"
+          type="tel"
+          name="telephone"
+          placeholder="e.g: 000 222 000 333"
+          value={bioData.telephone}
+          onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='location' className='personal_info_wrapper___label'>Location</label>
+        <label htmlFor="location" className="personal_info_wrapper___label">
+          Location
+        </label>
         <Input
-            id='location'
-            type="text"
-            name="location"
-            placeholder='e.g: Kumasi, Ashanti'
-            value={bioData.location}
-            onChange={handleBioDataFormChange}
+          id="location"
+          type="text"
+          name="location"
+          placeholder="e.g: Kumasi, Ashanti"
+          value={bioData.location}
+          onChange={handleBioDataFormChange}
         />
 
-        <label htmlFor='profileLink' className='personal_info_wrapper___label'>Profile Link</label>
+        <label htmlFor="profileLink" className="personal_info_wrapper___label">
+          Profile Link
+        </label>
         <Input
-            id='profileLink'
-            type="text"
-            name="profileLink"
-            placeholder='e.g: kafui4k.github.io'
-            value={bioData.profileLink}
-            onChange={handleBioDataFormChange}
+          id="profileLink"
+          type="text"
+          name="profileLink"
+          placeholder="e.g: kafui4k.github.io"
+          value={bioData.profileLink}
+          onChange={handleBioDataFormChange}
         />
       </div>
-    )
+    );
   }
 }
 
-export default Personal
+export default Personal;
