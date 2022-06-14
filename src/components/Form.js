@@ -4,22 +4,13 @@ import Educational from './forms/Educational';
 import Practical from './forms/Practical';
 
 function Form(props) {
-  const {
-    handleFormSubmit,
-    workExperience,
-    handleWorkExperienceFormChange,
-    addNewWorkExperience
-  } = props;
+  const { handleFormSubmit } = props;
 
   return (
     <form className="pinfo___form" onSubmit={handleFormSubmit}>
       <Personal />
       <Educational />
-      <Practical
-        workExperience={workExperience}
-        handleWorkExperienceFormChange={handleWorkExperienceFormChange}
-        addNewWorkExperience={addNewWorkExperience}
-      />
+      <Practical />
       <button className="btn-generate-resume" type="submit">
         Submit
       </button>

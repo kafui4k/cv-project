@@ -2,9 +2,7 @@ import React from 'react';
 import Input from '../Input';
 import TextArea from '../TextArea';
 
-function PracticalItem(props) {
-  const { experience, onChange } = props;
-
+function PracticalItem({ experience, onChange }) {
   return (
     <>
       <label htmlFor="companyName">Company Name</label>
