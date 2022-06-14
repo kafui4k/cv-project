@@ -1,48 +1,30 @@
-import React, { Component } from 'react';
-import Educational from './forms/Educational';
+import React from 'react';
 import Personal from './forms/Personal';
+import Educational from './forms/Educational';
 import Practical from './forms/Practical';
 
-class Form extends Component {
-  render() {
-    const {
-      bioData,
-      handleBioDataFormChange,
-      handleFormSubmit,
-      educationalExperience,
-      handleEducationalFormChange,
-      addNewEduExperience,
-      workExperience,
-      handleWorkExperienceFormChange,
-      addNewWorkExperience
-    } = this.props;
+function Form(props) {
+  const {
+    handleFormSubmit,
+    workExperience,
+    handleWorkExperienceFormChange,
+    addNewWorkExperience
+  } = props;
 
-    return (
-      <form className="pinfo___form" onSubmit={handleFormSubmit}>
-        <Personal
-          // firstname={bioData.firstname}
-          // lastname={bioData.lastname}
-          // email={bioData.email}
-          // telephone={bioData.telephone}
-          bioData={bioData}
-          handleBioDataFormChange={handleBioDataFormChange}
-        />
-        <Educational
-          educationalExperience={educationalExperience}
-          addNewEduExperience={addNewEduExperience}
-          handleEducationalFormChange={handleEducationalFormChange}
-        />
-        <Practical
-          workExperience={workExperience}
-          handleWorkExperienceFormChange={handleWorkExperienceFormChange}
-          addNewWorkExperience={addNewWorkExperience}
-        />
-        <button className="btn-generate-resume" type="submit">
-          Submit
-        </button>
-      </form>
-    );
-  }
+  return (
+    <form className="pinfo___form" onSubmit={handleFormSubmit}>
+      <Personal />
+      <Educational />
+      <Practical
+        workExperience={workExperience}
+        handleWorkExperienceFormChange={handleWorkExperienceFormChange}
+        addNewWorkExperience={addNewWorkExperience}
+      />
+      <button className="btn-generate-resume" type="submit">
+        Submit
+      </button>
+    </form>
+  );
 }
 
 export default Form;
