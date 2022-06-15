@@ -43,7 +43,7 @@ function Practical() {
 
   return (
     <div className="practical_experience_wrapper">
-      <h1 className="pinfo___title">Practical Experience</h1>
+      <h4 className="pinfo___title">Practical Experience</h4>
       {workExperiences.map((workExp) => {
         return (
           <PracticalItem
@@ -53,9 +53,12 @@ function Practical() {
           />
         );
       })}
-      <button onClick={addNewWorkExperience}>
-        add another work experience
-      </button>
+      <div className="practical___experience___wrapper___buttons">
+        <button onClick={() => alert('delete this experience')}>
+          delete experience
+        </button>
+        <button onClick={addNewWorkExperience}>add another experience</button>
+      </div>
     </div>
   );
 }

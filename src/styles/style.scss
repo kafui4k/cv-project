@@ -12,7 +12,7 @@ $displayGrid: grid;
 body {
     height: 100vh;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 main {
@@ -25,26 +25,55 @@ main {
 .personal_info_wrapper {
     display: $displayFlex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.3rem;
 }
 
 .educational_experience_wrapper {
     display: $displayFlex;
-    flex-direction: column;
-    gap: 8px;
+	flex-direction: column;
+}
+
+.educational___experience___form_fields {
+	display: $displayFlex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin-bottom: 1.5rem;
+}
+
+.educational___experience___wrapper___buttons {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
 }
 
 .practical_experience_wrapper {
     display: $displayFlex;
     flex-direction: column;
-    gap: 8px;
 }
 
-form {
+.practical___experience___form_fields {
+	display: $displayFlex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin-bottom: 1.5rem;
+}
+
+.practical___experience___wrapper___buttons {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+}
+
+.form_fields_wrapper {
     display: $displayFlex;
     flex-direction: column;
     /* border: 1px solid;
     padding: 10px; */
+}
+
+.form_fields_wrapper > button {
+	padding: 0.5rem;
+	margin-top: 0.5rem;
 }
 
 .profile-header {

@@ -5,7 +5,7 @@ import PreviewForm from './components/PreviewForm';
 function App() {
   const [generateResume, setGenerateResume] = useState(false);
 
-  const handleFormSubmit = (event) => {
+  const handleGenerateResumeClick = (event) => {
     event.preventDefault();
     // setState((prevState) => ({
     //   ...prevState.educationalExperiences,
@@ -14,14 +14,16 @@ function App() {
     //   workExperiences: this.state.workExperience
     // }));
 
-    setTimeout(() => {
-      setGenerateResume(true);
-    }, 5000);
+    // setTimeout(() => {
+    //   setGenerateResume(true);
+    // }, 5000);
+
+    setGenerateResume(true);
   };
 
   return (
     <main className="App">
-      <Form handleFormSubmit={handleFormSubmit} />
+      <Form handleFormSubmit={handleGenerateResumeClick} />
       <PreviewForm generateResume={generateResume} />
     </main>
   );

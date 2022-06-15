@@ -3,7 +3,7 @@ import Input from '../Input';
 
 function EducationalItem({ educaExp, onChange }) {
   return (
-    <>
+    <section className="educational___experience___form_fields">
       <label htmlFor="schoolAttended">School Attended</label>
       <Input
         id="schoolAttended"
@@ -63,7 +63,7 @@ function EducationalItem({ educaExp, onChange }) {
         value={educaExp.end}
         onChange={(event) => onChange(event, educaExp.id)}
       />
-    </>
+    </section>
   );
 }
 

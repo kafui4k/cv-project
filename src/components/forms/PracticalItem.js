@@ -4,7 +4,7 @@ import TextArea from '../TextArea';
 
 function PracticalItem({ experience, onChange }) {
   return (
-    <>
+    <section className="practical___experience___form_fields">
       <label htmlFor="companyName">Company Name</label>
       <Input
         type="text"
@@ -66,7 +66,7 @@ function PracticalItem({ experience, onChange }) {
         value={experience.endDate}
         onChange={(event) => onChange(event, experience.id)}
       />
-    </>
+    </section>
   );
 }
 

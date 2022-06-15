@@ -20,8 +20,7 @@ function Personal() {
 
   return (
     <div className="personal_info_wrapper">
-      <h1 className="personal_info_wrapper___title">Personal Information</h1>
-
+      <h4 className="personal_info_wrapper___title">Personal Information</h4>
       <label htmlFor="firstname" className="personal_info_wrapper___label">
         First name
       </label>

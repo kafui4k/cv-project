@@ -3,18 +3,19 @@ import Personal from './forms/Personal';
 import Educational from './forms/Educational';
 import Practical from './forms/Practical';
 
-function Form(props) {
-  const { handleFormSubmit } = props;
-
+function Form({ handleFormSubmit }) {
   return (
-    <form className="pinfo___form" onSubmit={handleFormSubmit}>
+    <section className="form_fields_wrapper">
       <Personal />
       <Educational />
       <Practical />
-      <button className="btn-generate-resume" type="submit">
-        Submit
+      <button
+        className="form_fields_wrapper___button"
+        onClick={handleFormSubmit}
+      >
+        Generate resume
       </button>
-    </form>
+    </section>
   );
 }
 

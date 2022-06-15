@@ -1,8 +1,11 @@
 import React from 'react';
 
-export default function PreviewForm(props) {
-  const { generateResume, bioData, educationalExperiences, workExperiences } =
-    props;
+export default function PreviewForm({
+  generateResume,
+  bioData,
+  educationalExperiences,
+  workExperiences
+}) {
   return (
     <div>
       {generateResume ? (

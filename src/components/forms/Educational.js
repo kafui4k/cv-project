@@ -39,21 +39,36 @@ function Educational() {
     ]);
   };
 
+  //   const handleRemoveEducationalExperience = (id) => {
+  //     setEducationalExperiences(
+  //       educationalExperiences.filter((eduExperience) => eduExperience.id !== id)
+  //     );
+  //   };
+
   return (
     <div className="educational_experience_wrapper">
-      <h1 className="educational_wrapper___title">Educational Experience</h1>
+      <h4 className="educational_wrapper___title">Educational Experience</h4>
       {educationalExperiences.map((educaExp) => {
         return (
-          <EducationalItem
-            key={educaExp.id}
-            educaExp={educaExp}
-            onChange={handleEducationalFormChange}
-          />
+          <>
+            <EducationalItem
+              key={educaExp.id}
+              educaExp={educaExp}
+              onChange={handleEducationalFormChange}
+            />
+            {/* <button
+              onClick={() => handleRemoveEducationalExperience(educaExp.id)}
+            >
+              delete experience
+            </button> */}
+          </>
         );
       })}
-      <button onClick={handleAddNewEducationalExperience}>
-        add another experience
-      </button>
+      <div className="educational___experience___wrapper___buttons">
+        <button onClick={handleAddNewEducationalExperience}>
+          add another experience
+        </button>
+      </div>
     </div>
   );
 }
