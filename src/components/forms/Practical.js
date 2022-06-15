@@ -41,22 +41,30 @@ function Practical() {
     ]);
   };
 
+  const handleDeleteWorkExperience = (id) => {
+    setWorkExperiences(
+      workExperiences.filter((workExperience) => workExperience.id !== id)
+    );
+  };
+
   return (
     <div className="practical_experience_wrapper">
       <h4 className="pinfo___title">Practical Experience</h4>
       {workExperiences.map((workExp) => {
         return (
-          <PracticalItem
-            key={workExp.id}
-            experience={workExp}
-            onChange={handleWorkExperienceFormChange}
-          />
+          <>
+            <PracticalItem
+              key={workExp.id}
+              experience={workExp}
+              onChange={handleWorkExperienceFormChange}
+            />
+            <button onClick={() => handleDeleteWorkExperience(workExp.id)}>
+              delete experience
+            </button>
+          </>
         );
       })}
       <div className="practical___experience___wrapper___buttons">
-        <button onClick={() => alert('delete this experience')}>
-          delete experience
-        </button>
         <button onClick={addNewWorkExperience}>add another experience</button>
       </div>
     </div>
