@@ -39,11 +39,11 @@ function Educational() {
     ]);
   };
 
-  //   const handleRemoveEducationalExperience = (id) => {
-  //     setEducationalExperiences(
-  //       educationalExperiences.filter((eduExperience) => eduExperience.id !== id)
-  //     );
-  //   };
+  const handleRemoveEducationalExperience = (id) => {
+    setEducationalExperiences(
+      educationalExperiences.filter((eduExperience) => eduExperience.id !== id)
+    );
+  };
 
   return (
     <div className="educational_experience_wrapper">
@@ -56,11 +56,11 @@ function Educational() {
               educaExp={educaExp}
               onChange={handleEducationalFormChange}
             />
-            {/* <button
+            <button
               onClick={() => handleRemoveEducationalExperience(educaExp.id)}
             >
               delete experience
-            </button> */}
+            </button>
           </>
         );
       })}
