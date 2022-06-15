@@ -4,7 +4,7 @@ import EducationalItem from './EducationalItem';
 function Educational() {
   const [educationalExperiences, setEducationalExperiences] = useState([
     {
-      id: Math.floor((Math.random() * 100) / 2),
+      id: Math.floor(Math.random() * 0 + 1),
       schoolAttended: '',
       studyTitle: '',
       studyType: '',
@@ -28,7 +28,7 @@ function Educational() {
     setEducationalExperiences([
       ...educationalExperiences,
       {
-        id: Math.floor((Math.random() * 100) / 2),
+        id: educationalExperiences.length + 1,
         schoolAttended: '',
         studyTitle: '',
         studyType: '',
@@ -48,22 +48,23 @@ function Educational() {
   return (
     <div className="educational_experience_wrapper">
       <h4 className="educational_wrapper___title">Educational Experience</h4>
-      {educationalExperiences.map((educaExp) => {
-        return (
-          <>
-            <EducationalItem
-              key={educaExp.id}
-              educaExp={educaExp}
-              onChange={handleEducationalFormChange}
-            />
-            <button
-              onClick={() => handleRemoveEducationalExperience(educaExp.id)}
-            >
-              delete experience
-            </button>
-          </>
-        );
-      })}
+      {educationalExperiences &&
+        educationalExperiences.map((educaExp) => {
+          return (
+            <>
+              <EducationalItem
+                key={educaExp.id}
+                educaExp={educaExp}
+                onChange={handleEducationalFormChange}
+              />
+              <button
+                onClick={() => handleRemoveEducationalExperience(educaExp.id)}
+              >
+                delete experience
+              </button>
+            </>
+          );
+        })}
       <div className="educational___experience___wrapper___buttons">
         <button onClick={handleAddNewEducationalExperience}>
           add another experience

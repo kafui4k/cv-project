@@ -7,18 +7,8 @@ function App() {
 
   const handleGenerateResumeClick = (event) => {
     event.preventDefault();
-    // setState((prevState) => ({
-    //   ...prevState.educationalExperiences,
-    //   educationalExperiences: this.state.educationalExperience,
-    //   ...prevState.workExperiences,
-    //   workExperiences: this.state.workExperience
-    // }));
 
-    // setTimeout(() => {
-    //   setGenerateResume(true);
-    // }, 5000);
-
-    setGenerateResume(true);
+    setGenerateResume(false);
   };
 
   return (
