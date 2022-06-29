@@ -17,7 +17,18 @@ class Form extends Component {
         telephone: '',
         location: '',
         profileLink: ''
-      }
+      },
+      educationalDetails: [
+        {
+          id: Math.floor(Math.random() * 0 + 1),
+          schoolAttended: '',
+          studyTitle: '',
+          studyType: '',
+          start: '',
+          end: '',
+          location: ''
+        }
+      ]
     };
   }
 
@@ -25,6 +36,43 @@ class Form extends Component {
     this.setState((prevState) => ({
       biodata: { ...prevState.biodata, [event.target.name]: event.target.value }
     }));
+  };
+
+  handleEducationalFormChange = (e, id) => {
+    const newEduExperiences = this.state.educationalDetails.map(
+      (eduExperience) => {
+        if (id === eduExperience.id) {
+          return { ...eduExperience, [e.target.name]: e.target.value };
+        }
+        return eduExperience;
+      }
+    );
+    this.setState({ educationalDetails: newEduExperiences });
+  };
+
+  handleAddNewEducationalExperience = () => {
+    this.setState((prevState) => ({
+      educationalDetails: [
+        ...prevState.educationalDetails,
+        {
+          id: this.state.educationalDetails.length + 1,
+          schoolAttended: '',
+          studyTitle: '',
+          studyType: '',
+          start: '',
+          end: '',
+          location: ''
+        }
+      ]
+    }));
+  };
+
+  handleRemoveEducationalExperience = (id) => {
+    this.setState({
+      educationalDetails: this.state.educationalDetails.filter(
+        (educationalDetail) => educationalDetail.id !== id
+      )
+    });
   };
 
   handleFormSubmit = () => {
@@ -44,7 +92,16 @@ class Form extends Component {
               biodata={this.state.biodata}
               handleBioDataFormChange={this.handleBioDataFormChange}
             />
-            <Educational />
+            <Educational
+              educationalDetails={this.state.educationalDetails}
+              handleEducationalFormChange={this.handleEducationalFormChange}
+              handleAddNewEducationalExperience={
+                this.handleAddNewEducationalExperience
+              }
+              handleRemoveEducationalExperience={
+                this.handleRemoveEducationalExperience
+              }
+            />
             {/* <Practical /> */}
             {/* <button
               className="form_fields_wrapper___button"
@@ -54,7 +111,10 @@ class Form extends Component {
             </button> */}
           </form>
         </section>
-        <PreviewForm data={this.state.biodata} />
+        <PreviewForm
+          data={this.state.biodata}
+          educationalDetails={this.state.educationalDetails}
+        />
       </div>
     );
   }

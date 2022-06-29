@@ -1,7 +1,11 @@
 import React from 'react';
 import Input from '../Input';
 
-function EducationalItem({ educaExp, onChange }) {
+function EducationalItem({
+  educationDetail,
+  handleEducationalFormChange,
+  handleRemoveEducationalExperience
+}) {
   return (
     <section className="educational___experience___form_fields">
       <label htmlFor="schoolAttended">School Attended</label>
@@ -10,8 +14,10 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="schoolAttended"
         placeholder="eg: School of Hard knocks"
-        value={educaExp.schoolAttended}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.schoolAttended}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
 
       <label htmlFor="studyTitle">Title of Study</label>
@@ -20,8 +26,10 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="studyTitle"
         placeholder="e.g: BSC Computer Science"
-        value={educaExp.studyTitle}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.studyTitle}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
 
       <label htmlFor="studyType">Study Type</label>
@@ -30,8 +38,10 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="studyType"
         placeholder="e.g: HND, BSC, MA etc..."
-        value={educaExp.studyType}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.studyType}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
 
       <label htmlFor="location">Location</label>
@@ -40,8 +50,10 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="location"
         placeholder="e.g: Ho, Volta Region"
-        value={educaExp.location}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.location}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
 
       <label htmlFor="start">Start</label>
@@ -50,8 +62,10 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="start"
         placeholder="August 2014"
-        value={educaExp.start}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.start}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
 
       <label htmlFor="end">End</label>
@@ -60,9 +74,17 @@ function EducationalItem({ educaExp, onChange }) {
         type="text"
         name="end"
         placeholder="November 2017 / Present / On-going etc..."
-        value={educaExp.end}
-        onChange={(event) => onChange(event, educaExp.id)}
+        value={educationDetail.end}
+        onChange={(event) =>
+          handleEducationalFormChange(event, educationDetail.id)
+        }
       />
+      <button
+        type="button"
+        onClick={() => handleRemoveEducationalExperience(educationDetail.id)}
+      >
+        delete experience
+      </button>
     </section>
   );
 }

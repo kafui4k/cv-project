@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function PreviewForm({
-  data
-  //   educationalExperiences,
+  data,
+  educationalDetails
   //   workExperiences
 }) {
   return (
@@ -24,26 +24,26 @@ export default function PreviewForm({
         </span>
       </div>
 
-      {/* {educationalExperiences &&
       <h3 className="profile___education___wrapper">Educational Experience</h3>
-            educationalExperiences.map((eduExp, i) => (
-              <div key={i + 1}>
-                <div className="profile-education">
-                  <h3>{eduExp.location}</h3>
-                  <h3>{eduExp.schoolAttended}</h3>
-                  <h3>
-                    {eduExp.start} - {eduExp.end}
-                  </h3>
-                </div>
-                <div className="profile___edication___town___program">
-                  <ul>
-                    <li>
-                      {eduExp.studyType} in {eduExp.studyTitle}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            ))} */}
+      {educationalDetails &&
+        educationalDetails.map((eduExp, i) => (
+          <div key={i + 1}>
+            <div className="profile-education">
+              <h3>{eduExp.location}</h3>
+              <h3>{eduExp.schoolAttended}</h3>
+              <h3>
+                {eduExp.start} - {eduExp.end}
+              </h3>
+            </div>
+            <div className="profile___edication___town___program">
+              <ul>
+                <li>
+                  {eduExp.studyType} in {eduExp.studyTitle}
+                </li>
+              </ul>
+            </div>
+          </div>
+        ))}
 
       {/* {workExperiences &&
       <h3 className="profile___work___wrapper">Practical Experience</h3>
