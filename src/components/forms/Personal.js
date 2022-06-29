@@ -1,23 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Input from '../Input';
 
-function Personal() {
-  const [bioData, setBioData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    telephone: '',
-    location: '',
-    profileLink: ''
-  });
-
-  const handleBioDataFormChange = (event) => {
-    setBioData((prevState) => ({
-      ...prevState,
-      [event.target.name]: event.target.value
-    }));
-  };
-
+function Personal({ biodata, handleBioDataFormChange }) {
   return (
     <div className="personal_info_wrapper">
       <h4 className="personal_info_wrapper___title">Personal Information</h4>
@@ -29,7 +13,7 @@ function Personal() {
         type="text"
         name="firstname"
         placeholder="e.g: John from Hooks"
-        value={bioData.firstname}
+        value={biodata.firstname}
         onChange={handleBioDataFormChange}
       />
 
@@ -41,7 +25,7 @@ function Personal() {
         type="text"
         name="lastname"
         placeholder="e.g:Doe"
-        value={bioData.lastname}
+        value={biodata.lastname}
         onChange={handleBioDataFormChange}
       />
 
@@ -53,7 +37,7 @@ function Personal() {
         type="email"
         name="email"
         placeholder="e.g: jd@admin.com"
-        value={bioData.email}
+        value={biodata.email}
         onChange={handleBioDataFormChange}
       />
 
@@ -65,7 +49,7 @@ function Personal() {
         type="tel"
         name="telephone"
         placeholder="e.g: 000 222 000 333"
-        value={bioData.telephone}
+        value={biodata.telephone}
         onChange={handleBioDataFormChange}
       />
 
@@ -77,7 +61,7 @@ function Personal() {
         type="text"
         name="location"
         placeholder="e.g: Kumasi, Ashanti"
-        value={bioData.location}
+        value={biodata.location}
         onChange={handleBioDataFormChange}
       />
 
@@ -89,7 +73,7 @@ function Personal() {
         type="text"
         name="profileLink"
         placeholder="e.g: kafui4k.github.io"
-        value={bioData.profileLink}
+        value={biodata.profileLink}
         onChange={handleBioDataFormChange}
       />
     </div>

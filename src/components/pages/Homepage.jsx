@@ -1,8 +1,9 @@
 import React from 'react';
+import Form from '../Form';
 
 const Homepage = () => (
   <div className="container">
-    <h1>Create your CV/Resume on the fly...</h1>
+    <Form />
   </div>
 );
 

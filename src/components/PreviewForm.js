@@ -1,37 +1,31 @@
 import React from 'react';
 
 export default function PreviewForm({
-  generateResume,
   data
   //   educationalExperiences,
   //   workExperiences
 }) {
   return (
-    <div>
-      {generateResume ? (
-        <section>
-          <div className="profile-header">
-            <span>
-              {data.telephone && data.telephone}
-              <br />
-              {data.location && data.location}
-            </span>
-            <h3>
-              {data.firstname && data.firstname}{' '}
-              {data.lastname && data.lastname}
-            </h3>
-            <span>
-              <ul>
-                <li>{data.email && data.email}</li>
-                <li>{data.profileLink && data.profileLink}</li>
-              </ul>
-            </span>
-          </div>
+    <section>
+      <div className="profile-header">
+        <span>
+          {data && data.telephone}
+          <br />
+          {data && data.location}
+        </span>
+        <h3>
+          {data && data.firstname} {data && data.lastname}
+        </h3>
+        <span>
+          <ul>
+            {data && <li>{data.email}</li>}
+            {data && <li>{data.profileLink}</li>}
+          </ul>
+        </span>
+      </div>
 
-          <h3 className="profile___education___wrapper">
-            Educational Experience
-          </h3>
-          {/* {educationalExperiences &&
+      {/* {educationalExperiences &&
+      <h3 className="profile___education___wrapper">Educational Experience</h3>
             educationalExperiences.map((eduExp, i) => (
               <div key={i + 1}>
                 <div className="profile-education">
@@ -51,8 +45,8 @@ export default function PreviewForm({
               </div>
             ))} */}
 
-          <h3 className="profile___work___wrapper">Practical Experience</h3>
-          {/* {workExperiences &&
+      {/* {workExperiences &&
+      <h3 className="profile___work___wrapper">Practical Experience</h3>
             workExperiences.map((workExp, i) => (
               <div key={i + 1}>
                 <div className="profile-work">
@@ -72,8 +66,6 @@ export default function PreviewForm({
                 </div>
               </div>
             ))} */}
-        </section>
-      ) : null}
-    </div>
+    </section>
   );
 }

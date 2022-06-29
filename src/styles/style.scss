@@ -2,7 +2,7 @@
 *::after {
     box-sizing: border-box;
     // margin: 0;
-    // padding: 0;
+    padding: 0;
 }
 
 // $body-color: linear-gradient(rgba(12, 122, 100), rgba(48, 32, 72));
@@ -15,7 +15,7 @@ body {
     font-size: 0.8rem;
 }
 
-main {
+.main {
     display: $displayGrid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;

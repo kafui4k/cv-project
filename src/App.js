@@ -1,22 +1,14 @@
-import React, { useState } from 'react';
-import Form from './components/Form';
-import PreviewForm from './components/PreviewForm';
+import React, { Component } from 'react';
+import Homepage from './components/pages/Homepage';
 
-function App() {
-  const [generateResume, setGenerateResume] = useState(false);
-
-  const handleGenerateResumeClick = (event) => {
-    event.preventDefault();
-
-    setGenerateResume(false);
-  };
-
-  return (
-    <main className="App">
-      <Form handleFormSubmit={handleGenerateResumeClick} />
-      <PreviewForm generateResume={generateResume} />
-    </main>
-  );
+class App extends Component {
+  render() {
+    return (
+      <main className="App">
+        <Homepage />
+      </main>
+    );
+  }
 }
 
 export default App;
