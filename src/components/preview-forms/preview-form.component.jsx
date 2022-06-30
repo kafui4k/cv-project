@@ -1,12 +1,14 @@
 import React from 'react';
 
+import './preview-form.styles.scss';
+
 export default function PreviewForm({
   data,
   educationalDetails,
   workExperienceDetails
 }) {
   return (
-    <section>
+    <section className="template-preview">
       <div className="profile-header">
         <span>
           {data && data.telephone}
@@ -35,7 +37,7 @@ export default function PreviewForm({
                 {eduExp.start} - {eduExp.end}
               </h3>
             </div>
-            <div className="profile___edication___town___program">
+            <div className="profile___education___town___program">
               <ul>
                 <li>
                   {eduExp.studyType} in {eduExp.studyTitle}

@@ -1,0 +1,36 @@
+$displayFlex: flex;
+
+.profile-header {
+    display: $displayFlex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile___education___wrapper {
+    border-bottom: 1px solid;
+}
+
+.profile-education {
+    display: $displayFlex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -20px;
+    
+}
+
+.profile___education___town___program {
+    display: $displayFlex;
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+.profile___work___wrapper {
+    border-bottom: 1px solid;
+}
+
+.profile-work {
+    display: $displayFlex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+}

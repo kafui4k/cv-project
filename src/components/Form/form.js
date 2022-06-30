@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Personal from './forms/Personal';
-import Educational from './forms/Educational';
-import Practical from './forms/Practical';
-import PreviewForm from './PreviewForm';
+import Personal from '../forms/personal/personal.component';
+import Educational from '../forms/Educational';
+import Practical from '../forms/Practical';
+import PreviewForm from '../preview-forms/preview-form.component';
+
+import './form.styles.scss';
 
 class Form extends Component {
   constructor(props) {
@@ -135,7 +137,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="forms-section">
         <section className="form_fields_wrapper">
           <form onSubmit={this.submitFormHandler}>
             <Personal

@@ -21,7 +21,7 @@ function Practical({
         );
       })}
       <div className="practical___experience___wrapper___buttons">
-        <button onClick={addNewWorkExperience}>add another experience</button>
+        <button onClick={addNewWorkExperience}>add experience</button>
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+$displayFlex: flex;
+$displayGrid: grid;
+
+.forms-section {
+    display: $displayGrid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+    gap: 16px;
+}
+
+.form_fields_wrapper {
+    display: $displayFlex;
+    flex-direction: column;
+    overflow-y: scroll;
+	height: 70vh;
+	padding: 1rem;
+
+	button {
+		padding: 0.5rem;
+		margin-top: 0.5rem;
+	}
+}

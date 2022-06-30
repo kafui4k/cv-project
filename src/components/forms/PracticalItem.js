@@ -85,6 +85,7 @@ function PracticalItem({
         }
       />
       <button
+        type="button"
         onClick={() => handleDeleteWorkExperience(workexperiencedetail.id)}
       >
         delete experience

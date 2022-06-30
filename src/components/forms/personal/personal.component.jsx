@@ -1,5 +1,7 @@
 import React from 'react';
-import Input from '../Input';
+import Input from '../../Input';
+
+import './personal.styles.scss';
 
 function Personal({ biodata, handleBioDataFormChange }) {
   return (
