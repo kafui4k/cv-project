@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Personal from './forms/Personal';
 import Educational from './forms/Educational';
-// import Practical from './forms/Practical';
+import Practical from './forms/Practical';
 import PreviewForm from './PreviewForm';
 
 class Form extends Component {
@@ -27,6 +27,18 @@ class Form extends Component {
           start: '',
           end: '',
           location: ''
+        }
+      ],
+      workExperienceDetails: [
+        {
+          id: Math.floor(Math.random() * 0 + 1),
+          companyName: '',
+          positionTitle: '',
+          jobType: '',
+          location: '',
+          jobDescription: '',
+          startDate: '',
+          endDate: ''
         }
       ]
     };
@@ -75,6 +87,44 @@ class Form extends Component {
     });
   };
 
+  handleWorkExperienceFormChange = (e, id) => {
+    const newWorkExperiences = this.state.workExperienceDetails.map(
+      (workExperienceDetail) => {
+        if (id === workExperienceDetail.id) {
+          return { ...workExperienceDetail, [e.target.name]: e.target.value };
+        }
+        return workExperienceDetail;
+      }
+    );
+    this.setState({ workExperienceDetails: newWorkExperiences });
+  };
+
+  addNewWorkExperience = () => {
+    this.setState((prevState) => ({
+      workExperienceDetails: [
+        ...prevState.workExperienceDetails,
+        {
+          id: this.state.workExperienceDetails.length + 1,
+          companyName: '',
+          positionTitle: '',
+          jobType: '',
+          location: '',
+          jobDescription: '',
+          startDate: '',
+          endDate: ''
+        }
+      ]
+    }));
+  };
+
+  handleDeleteWorkExperience = (id) => {
+    this.setState({
+      workExperienceDetails: this.state.workExperienceDetails.filter(
+        (workExperience) => workExperience.id !== id
+      )
+    });
+  };
+
   handleFormSubmit = () => {
     console.log(this.state.biodata);
   };
@@ -102,7 +152,14 @@ class Form extends Component {
                 this.handleRemoveEducationalExperience
               }
             />
-            {/* <Practical /> */}
+            <Practical
+              workExperienceDetails={this.state.workExperienceDetails}
+              handleWorkExperienceFormChange={
+                this.handleWorkExperienceFormChange
+              }
+              addNewWorkExperience={this.addNewWorkExperience}
+              handleDeleteWorkExperience={this.handleDeleteWorkExperience}
+            />
             {/* <button
               className="form_fields_wrapper___button"
               onClick={this.handleFormSubmit}
@@ -114,6 +171,7 @@ class Form extends Component {
         <PreviewForm
           data={this.state.biodata}
           educationalDetails={this.state.educationalDetails}
+          workExperienceDetails={this.state.workExperienceDetails}
         />
       </div>
     );

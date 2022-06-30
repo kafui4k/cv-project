@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function PreviewForm({
   data,
-  educationalDetails
-  //   workExperiences
+  educationalDetails,
+  workExperienceDetails
 }) {
   return (
     <section>
@@ -45,27 +45,28 @@ export default function PreviewForm({
           </div>
         ))}
 
-      {/* {workExperiences &&
       <h3 className="profile___work___wrapper">Practical Experience</h3>
-            workExperiences.map((workExp, i) => (
-              <div key={i + 1}>
-                <div className="profile-work">
-                  <h3>{workExp.positionTitle}</h3>
-                  <h3>{workExp.companyName}</h3>
-                  <h3>
-                    {workExp.startDate} - {workExp.endDate}
-                  </h3>
-                </div>
-                <div>
-                  <span>
-                    {workExp.location} | {workExp.jobType}
-                  </span>
-                  <ul>
-                    <li>{workExp.jobDescription}</li>
-                  </ul>
-                </div>
-              </div>
-            ))} */}
+      {workExperienceDetails &&
+        workExperienceDetails.map((workExperienceDetail) => (
+          <div key={workExperienceDetail.id}>
+            <div className="profile-work">
+              <h3>{workExperienceDetail.positionTitle}</h3>
+              <h3>{workExperienceDetail.companyName}</h3>
+              <h3>
+                {workExperienceDetail.startDate} -{' '}
+                {workExperienceDetail.endDate}
+              </h3>
+            </div>
+            <div>
+              <span>
+                {workExperienceDetail.location} | {workExperienceDetail.jobType}
+              </span>
+              <ul>
+                <li>{workExperienceDetail.jobDescription}</li>
+              </ul>
+            </div>
+          </div>
+        ))}
     </section>
   );
 }

@@ -2,7 +2,11 @@ import React from 'react';
 import Input from '../Input';
 import TextArea from '../TextArea';
 
-function PracticalItem({ experience, onChange }) {
+function PracticalItem({
+  workexperiencedetail,
+  handleWorkExperienceFormChange,
+  handleDeleteWorkExperience
+}) {
   return (
     <section className="practical___experience___form_fields">
       <label htmlFor="companyName">Company Name</label>
@@ -10,8 +14,10 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="companyName"
         placeholder="e.g: John Doe ent."
-        value={experience.companyName}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.companyName}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
 
       <label htmlFor="positionTitle">Position Title</label>
@@ -19,8 +25,10 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="positionTitle"
         placeholder="e.g: Senior Engineer"
-        value={experience.positionTitle}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.positionTitle}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
 
       <label htmlFor="jobType">Job Type</label>
@@ -28,8 +36,10 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="jobType"
         placeholder="e.g: Contract/ Full-Time/ Part-Time etc..."
-        value={experience.jobType}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.jobType}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
 
       <label htmlFor="location">Location</label>
@@ -37,16 +47,20 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="location"
         placeholder="e.g: Remote/Onsite etc..."
-        value={experience.location}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.location}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
 
       <label htmlFor="jobDescription">Job/Role Description</label>
       <TextArea
         name="jobDescription"
         placeholder="e.g: A lot of stuff"
-        value={experience.jobDescription}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.jobDescription}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       ></TextArea>
 
       <label htmlFor="startDate">Start Date</label>
@@ -54,8 +68,10 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="startDate"
         placeholder="September 2020"
-        value={experience.startDate}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.startDate}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
 
       <label htmlFor="endDate">End Date</label>
@@ -63,9 +79,16 @@ function PracticalItem({ experience, onChange }) {
         type="text"
         name="endDate"
         placeholder="January 2022 / Present etc..."
-        value={experience.endDate}
-        onChange={(event) => onChange(event, experience.id)}
+        value={workexperiencedetail.endDate}
+        onChange={(event) =>
+          handleWorkExperienceFormChange(event, workexperiencedetail.id)
+        }
       />
+      <button
+        onClick={() => handleDeleteWorkExperience(workexperiencedetail.id)}
+      >
+        delete experience
+      </button>
     </section>
   );
 }
