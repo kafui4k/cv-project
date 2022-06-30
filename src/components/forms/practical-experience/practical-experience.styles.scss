@@ -1,0 +1,19 @@
+$displayFlex: flex;
+
+.practical_experience_wrapper {
+    display: $displayFlex;
+    flex-direction: column;
+
+	.practical___experience___wrapper___buttons {
+		display: $displayFlex;
+		gap: 10px;
+		justify-content: flex-end;
+	}
+}
+
+.practical___experience___form_fields {
+	display: $displayFlex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin-bottom: 1.5rem;
+}

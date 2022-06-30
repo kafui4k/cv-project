@@ -1,5 +1,7 @@
 import React from 'react';
-import Input from '../Input';
+import Input from '../../Input';
+
+import './education-experience.styles.scss';
 
 function EducationalItem({
   educationDetail,

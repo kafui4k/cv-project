@@ -1,5 +1,7 @@
 import React from 'react';
-import PracticalItem from './PracticalItem';
+import PracticalItem from './practical-item.component';
+
+import './practical-experience.styles.scss';
 
 function Practical({
   workExperienceDetails,

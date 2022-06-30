@@ -1,5 +1,7 @@
 import React from 'react';
-import EducationalItem from './EducationalItem';
+import EducationalItem from './education-item.component';
+
+import './education-experience.styles.scss';
 
 function Educational({
   educationalDetails,
@@ -9,7 +11,9 @@ function Educational({
 }) {
   return (
     <div className="educational_experience_wrapper">
-      <h4 className="educational_wrapper___title">Educational Experience</h4>
+      <h4 className="educational___experience___wrapper___title">
+        Educational Experience
+      </h4>
       {educationalDetails.map((educationDetail) => {
         return (
           <EducationalItem

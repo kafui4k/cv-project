@@ -1,6 +1,8 @@
 import React from 'react';
-import Input from '../Input';
-import TextArea from '../TextArea';
+import Input from '../../Input';
+import TextArea from '../../TextArea';
+
+import './practical-experience.styles.scss';
 
 function PracticalItem({
   workexperiencedetail,

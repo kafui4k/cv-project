@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Personal from '../forms/personal/personal.component';
-import Educational from '../forms/Educational';
-import Practical from '../forms/Practical';
+import Educational from '../forms/education-experience/education-experience.component';
+import Practical from '../forms/practical-experience/practical-experience.component';
 import PreviewForm from '../preview-forms/preview-form.component';
 
 import './form.styles.scss';
