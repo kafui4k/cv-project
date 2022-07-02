@@ -5,7 +5,7 @@ import './header.styles.scss';
 function Header() {
   return (
     <div className="header">
-      <h1>resume</h1>
+      <h1 className="header-ttile">resume</h1>
       <nav className="nav">
         <ul className="nav-items">
           <li>Github</li>
