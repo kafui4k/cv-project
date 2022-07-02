@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../Form/form';
+import Form from '../Form/form.component';
 
 const Homepage = () => (
   <div className="container">
