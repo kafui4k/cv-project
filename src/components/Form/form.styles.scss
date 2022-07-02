@@ -6,6 +6,11 @@ $displayGrid: grid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;
     gap: 16px;
+
+	@media screen and (max-width: 800px) {
+		display: grid;
+		grid-template-columns: none;
+	}
 }
 
 .form_fields_wrapper {
