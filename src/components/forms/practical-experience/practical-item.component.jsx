@@ -2,6 +2,7 @@ import React from 'react';
 import Input from '../../Input';
 import TextArea from '../../TextArea';
 
+import CustomButton from '../../buttons/custom-button/custom-button.component';
 import './practical-experience.styles.scss';
 
 function PracticalItem({
@@ -86,12 +87,11 @@ function PracticalItem({
           handleWorkExperienceFormChange(event, workexperiencedetail.id)
         }
       />
-      <button
-        type="button"
+      <CustomButton
+        type={'button'}
         onClick={() => handleDeleteWorkExperience(workexperiencedetail.id)}
-      >
-        delete experience
-      </button>
+        text="delete experience"
+      />
     </section>
   );
 }

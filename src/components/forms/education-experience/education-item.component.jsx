@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from '../../Input';
 
+import CustomButton from '../../buttons/custom-button/custom-button.component';
 import './education-experience.styles.scss';
 
 function EducationalItem({
@@ -81,12 +82,11 @@ function EducationalItem({
           handleEducationalFormChange(event, educationDetail.id)
         }
       />
-      <button
+      <CustomButton
         type="button"
         onClick={() => handleRemoveEducationalExperience(educationDetail.id)}
-      >
-        delete experience
-      </button>
+        text="delete experience"
+      />
     </section>
   );
 }
