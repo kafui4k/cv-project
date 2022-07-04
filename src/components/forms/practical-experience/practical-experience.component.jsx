@@ -1,7 +1,7 @@
 import React from 'react';
 import PracticalItem from './practical-item.component';
 
-import CustomButton from '../../buttons/custom-button/custom-button.component';
+import { Button } from '../../buttons/custom-button/custom-button.styles';
 import './practical-experience.styles.scss';
 
 function Practical({
@@ -24,11 +24,9 @@ function Practical({
         );
       })}
       <div className="practical___experience___wrapper___buttons">
-        <CustomButton
-          primary={'primary'}
-          onClick={addNewWorkExperience}
-          text="add experience"
-        />
+        <Button type="button" primary="primary" onClick={addNewWorkExperience}>
+          add experience
+        </Button>
       </div>
     </div>
   );

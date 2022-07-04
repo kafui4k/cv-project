@@ -1,7 +1,7 @@
 import React from 'react';
 import EducationalItem from './education-item.component';
 
-import CustomButton from '../../buttons/custom-button/custom-button.component';
+import { Button } from '../../buttons/custom-button/custom-button.styles';
 import './education-experience.styles.scss';
 
 function Educational({
@@ -28,12 +28,13 @@ function Educational({
         );
       })}
       <div className="educational___experience___wrapper___buttons">
-        <CustomButton
-          type={'button'}
-          primary={'primary'}
+        <Button
+          type="button"
+          primary="primary"
           onClick={handleAddNewEducationalExperience}
-          text="add experience"
-        />
+        >
+          add experience
+        </Button>
       </div>
     </div>
   );

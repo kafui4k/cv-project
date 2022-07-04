@@ -1,11 +1,11 @@
 import React from 'react';
-import Input from '../../Input';
+import Input from '../../input/Input';
 
-import './personal.styles.scss';
+import { PersonalInfoWrapper } from './personal-info.styles';
 
 function Personal({ biodata, handleBioDataFormChange }) {
   return (
-    <div className="personal_info_wrapper">
+    <PersonalInfoWrapper>
       <h4 className="personal_info_wrapper___title">Personal Information</h4>
       <label htmlFor="firstname" className="personal_info_wrapper___label">
         First name
@@ -78,7 +78,7 @@ function Personal({ biodata, handleBioDataFormChange }) {
         value={biodata.profileLink}
         onChange={handleBioDataFormChange}
       />
-    </div>
+    </PersonalInfoWrapper>
   );
 }
 

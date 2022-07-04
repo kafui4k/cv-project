@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { InputWrapper } from './input.styles';
+
 export default function Input({
   id,
   type,
@@ -9,7 +11,7 @@ export default function Input({
   onChange
 }) {
   return (
-    <input
+    <InputWrapper
       id={id}
       type={type}
       name={name}

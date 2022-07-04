@@ -139,7 +139,7 @@ class Form extends Component {
     return (
       <div className="forms-section">
         <section className="form_fields_wrapper">
-          <form onSubmit={this.submitFormHandler}>
+          <form onSubmit={this.submitFormHandler} autoComplete="off">
             <Personal
               biodata={this.state.biodata}
               handleBioDataFormChange={this.handleBioDataFormChange}
